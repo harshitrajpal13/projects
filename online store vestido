@@ -1,0 +1,295 @@
+#include<stdio.h>
+#include<string.h>
+main()
+{
+ static int totalCost;
+ int i,j,choice,c=1,a[9],cost[9];
+ for(i=0;i<9;i++)
+ a[i]=0;
+ 
+ char str[100];
+ char items[9][100]={"Duffle Bags",
+ "Hackett Tshirts",
+ "Branded Shoes",
+ "Adidas Tshirts",
+ "Lee Tshirts",
+ "Sports Shoes",
+ "Party Wear Shoes",
+ "Female Bags",
+ "Laptop Bags"  
+ };
+ printf("Please Enter Your Name\n");
+ scanf("%s",&str);
+ printf("Hello %s, Welcome to our ONLINE VESTIDO..\n",str);
+ do{
+  //C is 1 by default
+  if(c==1){
+  printf("Enter\n1 - Tshirts\n2 - Shoes\n3 - Bags\nAny other number to exit\n");
+  scanf("%d",&choice);
+  switch(choice)
+  {
+   case 1:
+   {
+    int TshirtsChoice;
+    printf("Enter\n1 - Lee Tshirts - Rs.1099\n2 - Adidas Tshirts- Rs.999\n3 - Hackett Tshirts - Rs.1399\nAny other number to exit\n");
+    scanf("%d",&TshirtsChoice);
+    cost[0]=1099;
+    cost[1]=999;
+    cost[2]=1399;
+    switch(TshirtsChoice)
+    {
+     case 1:
+     {
+      int num;
+      printf("You chose  Lee Tshirts with Rs.1099.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+      scanf("%d",&num);
+      if(num==1)
+      {
+       a[0]++;
+       totalCost+=1099;
+      }
+      printf("Your Cost in Cart is %d\n",totalCost);
+      break;
+     }
+     case 2:
+     {
+      int num;
+      printf("You chose  Adidas Tshirts with Rs.999.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+      scanf("%d",&num);
+      if(num==1)
+      {
+       a[1]++;
+       totalCost+=999;
+      }
+      printf("Your Cost in Cart is %d\n",totalCost);
+      break;
+     }
+     case 3:
+     {
+      int num;
+      printf("You chose Hackett Tshirts with Rs.1399.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+      scanf("%d",&num);
+      if(num==1)
+      {
+       a[2]++;
+       totalCost+=1399;
+      }
+      printf("Your Cost in Cart is %d\n",totalCost);
+      break;
+     }
+     default:{
+      printf("Exit from Tees Category\n");
+      break;
+     }
+    }
+    break;
+   }
+   case 2:
+   {
+    int shoesChoice;
+    printf("Enter\n1 - Branded Shoes- Rs.3499\n2 - Party Wear Shoes - Rs.2999\n3 - Sports Shoes - Rs.1999\nAny other number to exit\n");
+    scanf("%d",&shoesChoice);
+    cost[3]=3499;
+    cost[4]=2999;
+    cost[5]=1999;
+    switch(shoesChoice)
+    {
+     case 1:
+     {
+      int num;
+      printf("You chose Branded Shoes for Rs.3499.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+      scanf("%d",&num);
+      if(num==1)
+      {
+       a[3]++;
+       totalCost+=3499;
+      }
+      printf("Your Cost in Cart is %d\n",totalCost);
+      break;
+     }
+     case 2:
+     {
+      int num;
+      printf("You chose Party Wear Shoes for Rs.2999.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+      scanf("%d",&num);
+      if(num==1)
+      {
+       a[4]++;
+       totalCost+=2999;
+      }
+      printf("Your Cost in Cart is %d\n",totalCost);
+      break;
+     }
+     case 3:
+     {
+      int num;
+      printf("You chose Sports Shoes for Rs.1999.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+      scanf("%d",&num);
+      if(num==1)
+      {
+       a[5]++;
+       totalCost+=1999;
+      }
+      printf("Your Cost in Cart is %d\n",totalCost);
+      break;
+     }
+     default:{
+      printf("Exit from Shoes Category\n");
+      break;
+     }
+    }
+    break;
+   }
+   case 3:
+   {
+    int bagsChoice;
+    printf("Enter\n1 - Laptop Bags - Rs.1299\n2 - Female Bags- Rs.2499\n3 - Duffle Bags- Rs.1999\nAny other number to exit\n");
+    scanf("%d",&bagsChoice);
+    cost[6]=1299;
+    cost[7]=2499;
+    cost[8]=1999;
+    switch(bagsChoice)
+    {
+     case 1:
+     {
+      int num;
+      printf("You chose to buy Laptop Bags for Rs.11000.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+      scanf("%d",&num);
+      if(num==1)
+      {
+       a[6]++;
+       totalCost+=1299;
+      }
+      printf("Your Cost in Cart is %d\n",totalCost);
+      break;
+     }
+     case 2:
+     {
+      int num;
+      printf("You chose to buy Female Bags for Rs.2499.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+      scanf("%d",&num);
+      if(num==1)
+      {
+       a[7]++;
+       totalCost+=2499;
+      }
+      printf("Your Cost in Cart is %d\n",totalCost);
+      break;
+     }
+     case 3:
+     {
+      int num;
+      printf("You chose to buy Duffle Bags for Rs.1999.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+      scanf("%d",&num);
+      if(num==1)
+      {
+       a[8]++;
+       totalCost+=1999;
+      }
+      printf("Your Cost in Cart is %d\n",totalCost);
+      break;
+     }
+     default:{
+      printf("Exit from Bags Category\n");
+      break;
+     }
+    }
+    break;
+   }
+   default:
+   {
+    printf("Enter Valid Categories Choice\n");
+    break;
+   }
+  }
+  printf("%s's cart\n",str);
+  printf("Id\tItems\t\tQuantity\tCost\n");
+  for(i=0;i<9;i++)
+  {
+   if(a[i]!=0)
+   {
+    printf("%d\t%s\t\t%d\t\t\t%d\n",i,items[i],a[i],(cost[i]*a[i]));
+   }
+  }
+  printf("Total Cost\t\t\t\t\t%d\n",totalCost);
+  printf("If you wish to buy anything more Enter\n1 to Add Item\n2 to Delete Items\n3 to Change Quantity \nAny other number to Exit\n");
+  scanf("%d",&c);
+ }
+  if(c==2)
+  {
+   int id;
+   printf("Enter id to delete item\n");
+   scanf("%d",&id);
+   if(id<9&&id>0){
+   totalCost=totalCost-(cost[id]*a[id]);
+   a[id]=0;
+   }
+   else{
+    printf("Enter Valid id\n");
+   }
+       printf("Revised Items \n");
+       printf("Id\tItems\t\tQuantity\tCost\n");
+            for(i=0;i<9;i++)
+      {
+     if(a[i]!=0)
+      {
+    printf("%d\t%s\t%d\t\t%d\n",i,items[i],a[i],(cost[i]*a[i]));
+      }
+     }
+        printf("Total Cost\t\t\t\t\t%d\n",totalCost);
+        printf("If you wish to buy anything more Enter\n1 to Add Item\n2 to Delete Items\n3 to Change Quantity \nAny other number to Exit\n");
+     scanf("%d",&c);
+  }
+  if(c==3)
+  {
+   int id,quantity;
+   printf("Enter id to Change quantity of an item\n");
+   scanf("%d",&id);
+   printf("Enter quantity to be changed of an item\n");
+   scanf("%d",&quantity);
+   if(id<9&&id>0){
+    if(quantity>0 && a[id]>0){  
+        if(quantity<a[id]) 
+     {
+      int dec=a[id]-quantity;
+      a[id]=quantity;
+       totalCost=totalCost-(cost[id]*dec); 
+     }
+     if(quantity>a[id]) 
+     {
+      int inc=quantity-a[id];
+      a[id]=quantity;
+       totalCost=totalCost+(cost[id]*inc); 
+     }
+     if(quantity==a[id]) 
+     {
+      a[id]=quantity;
+       totalCost=totalCost+0; 
+     }   
+           
+    }
+    else{
+       printf("Item has no Quantity.Please Try again\n");
+    }
+     }
+     else{
+    printf("Enter Valid id\n");
+   }
+       printf("Revised Items \n");
+       printf("Id\tItems\t\tQuantity\tCost\n");
+            for(i=0;i<9;i++)
+      {
+     if(a[i]!=0)
+      {
+    printf("%d\t%s\t%d\t\t%d\n",i,items[i],a[i],(cost[i]*a[i]));
+      }
+     }
+        printf("Total Cost\t\t\t\t\t%d\n",totalCost);
+        printf("If you wish to buy anything more Enter\n1 to Add Item\n2 to Delete Items\n3 to Change Quantity \nAny other number to Exit\n");
+     scanf("%d",&c);
+  }
+ }while(c==1 || c==2 ||c==3);
+ printf("Your Final Cost is %d\n",totalCost);
+ printf("Thanks %s for Choosing Us and Visit us again.\n",str);
+ 
+}
